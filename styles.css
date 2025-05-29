@@ -1,0 +1,339 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #e0e0e0;
+}
+
+.container {
+    width: 100%;
+    max-width: 1400px;
+    padding: 20px;
+    position: relative;
+    min-height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.screen,
+.content-screen {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background: rgba(26, 26, 46, 0.7);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-radius: 15px;
+}
+
+.screen.active,
+.content-screen.active {
+    display: flex;
+    animation: fadeIn 0.6s ease forwards;
+}
+
+.welcome-button {
+    padding: 25px 50px;
+    font-size: 28px;
+    background: linear-gradient(45deg, #ff9a8b 0%, #ff6a88 55%, #ff99ac 100%);
+    color: white;
+    border: none;
+    border-radius: 60px;
+    cursor: pointer;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.welcome-button:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.grade-buttons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 800px;
+    width: 100%;
+    padding: 20px;
+}
+
+.grade-btn {
+    padding: 40px;
+    font-size: 22px;
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.grade-btn:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.content-box {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 20px;
+    padding: 50px;
+    max-width: 900px;
+    width: 100%;
+    color: #e0e0e0;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    margin: 30px;
+    overflow-y: auto;
+    max-height: calc(90vh - 60px);
+}
+
+.content-box h2 {
+    font-size: 36px;
+    margin: 50px 0 30px;
+    text-align: center;
+    color: #8aff8a;
+    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.content-box h2:first-child {
+    margin-top: 0;
+}
+
+.text-content {
+    font-size: 19px;
+    line-height: 1.9;
+    margin-bottom: 30px;
+}
+
+.text-content p {
+    margin-bottom: 20px;
+}
+
+.text-content a {
+    color: #4dabf7;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.text-content a:hover {
+    color: #a6e22e;
+    text-decoration: underline;
+}
+
+.whmis-section {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0;
+}
+
+.whmis-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.back-btn {
+    display: block;
+    margin: 40px auto 0;
+    padding: 15px 35px;
+    font-size: 18px;
+    background: linear-gradient(45deg, #6a11cb 0%, #2575fc 100%);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.back-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(45deg, #2575fc 0%, #6a11cb 100%);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.content-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    display: block;
+    margin: 30px auto;
+}
+
+.bipoc-project-images,
+.diwali-razzmataz-images,
+.climate-crisis-connect-images,
+.grade10-documents,
+.penholder-image,
+.safety-poster-image,
+.innovire-summit-images,
+.book-reading-image,
+.grade12-resume-image,
+.csmc2024-image,
+.gamehub-image,
+.jamhacks-image,
+.csmc-image,
+.senior-home-image,
+.shad-images {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    margin: 30px 0;
+}
+
+.bipoc-project-images .content-image,
+.diwali-razzmataz-images .content-image,
+.climate-crisis-connect-images .content-image,
+.grade10-documents .content-image,
+.penholder-image .content-image,
+.safety-poster-image .content-image,
+.innovire-summit-images .content-image,
+.book-reading-image .content-image,
+.grade12-resume-image .content-image,
+.csmc2024-image .content-image,
+.gamehub-image .content-image,
+.jamhacks-image .content-image,
+.csmc-image .content-image,
+.senior-home-image .content-image,
+.shad-images .content-image {
+    max-width: 100%;
+    height: auto;
+    margin: 0;
+}
+
+.screen.active {
+    animation: fadeIn 0.6s ease forwards;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at top left, rgba(106, 17, 203, 0.2) 0%, rgba(37, 117, 252, 0.2) 50%, rgba(106, 17, 203, 0.2) 100%);
+    animation: pulse 8s infinite alternate;
+    z-index: -1;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.1);
+    }
+}
+
+@media (max-width: 768px) {
+    .welcome-button {
+        font-size: 20px;
+        padding: 15px 30px;
+    }
+
+    .grade-buttons {
+        grid-template-columns: 1fr;
+    }
+
+    .grade-btn {
+        font-size: 18px;
+        padding: 25px;
+    }
+
+    .content-box {
+        padding: 30px;
+        margin: 15px;
+    }
+
+    .content-box h2 {
+        font-size: 28px;
+        margin: 30px 0 20px;
+    }
+
+    .text-content {
+        font-size: 16px;
+        line-height: 1.7;
+    }
+
+    .content-image {
+        margin: 20px auto;
+    }
+
+    .back-btn {
+        font-size: 16px;
+        padding: 10px 25px;
+        margin-top: 30px;
+    }
+
+    .bipoc-project-images .content-image,
+    .diwali-razzmataz-images .content-image,
+    .climate-crisis-connect-images .content-image {
+         max-width: 100%;
+         margin: 10px auto;
+    }
+
+     .grade10-documents .content-image,
+     .penholder-image .content-image,
+     .safety-poster-image .content-image,
+     .innovire-summit-images .content-image,
+     .book-reading-image .content-image,
+     .grade12-resume-image .content-image,
+     .csmc2024-image .content-image,
+     .gamehub-image .content-image,
+     .jamhacks-image .content-image,
+     .csmc-image .content-image,
+     .senior-home-image .content-image,
+     .shad-images .content-image {
+        max-width: 100%;
+        margin: 10px auto;
+    }
+} 
